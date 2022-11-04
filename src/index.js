@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
 import "./database"
+import recetaRouter from "./routes/recetas.routes"
 
 const app = express();
 app.set("port", process.env.PORT || 4005)
@@ -19,6 +20,4 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname,'../public')));
 
 // Rutas
-app.get("apiblogrecetas", (req, res)=>{
-    res.send('Esto es una prueba de una peticion get')
-})
+app.use("/apiblogrecetas", recetaRouter)
