@@ -55,3 +55,17 @@ export const editarReceta = async(req, res) => {
     })
   }
 }
+
+export const borrarReceta = async(req, res) => {
+  try{
+    await Receta.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+      mensaje: 'Se eliminó la receta correctamente'
+    })
+  }catch (error){
+    console.log(error)
+    res.status(404).json({
+      mensaje: 'Error al intentar borrar la receta'
+    })
+  }
+}
