@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const recetaSchema = new Schema({
-    nombreComida: {
+    nombreReceta: {
         type: String,
         required: true,
         minLength: 2,
