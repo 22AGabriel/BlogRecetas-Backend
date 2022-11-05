@@ -4,7 +4,8 @@ const recetaSchema = new Schema({
     nombreReceta: {
         type: String,
         required: true,
-        minLength: 2,
+        minLength: 5,
+        maxLength: 100,
         unique: true
     },
     ingredientes: {
