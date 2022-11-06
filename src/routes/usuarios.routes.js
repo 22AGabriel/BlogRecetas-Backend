@@ -5,7 +5,8 @@ import { check } from "express-validator";
 const router = Router();
 
 router
-  .route("/registrar")
+  .route("/usuarios")
+    .get(login)
     .post(
         [
             check("nombre")
@@ -30,7 +31,5 @@ router
               .withMessage("Entre 8 y 16 caracteres, al menos un dígito, al menos una mayúscula, al menos una minúscula y NO puede tener otros símbolos.")
         ],
     registrarUsuario)
-
-router.route("/login").get(login)
 
 export default router;
