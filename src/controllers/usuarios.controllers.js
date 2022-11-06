@@ -13,4 +13,15 @@ export const registrarUsuario = async (req, res) => {
         mensaje: "Error al regsitrar el usuario",
       });
     }
+};
+
+export const login = async (req, res) => {
+    try {
+      const usuarios = await Usuario.find();
+      res.status(200).json(usuarios);
+    } catch (error) {
+      res.status(400).json({
+        mensaje: "Error al buscar los usuarios",
+      });
+    }
   };
